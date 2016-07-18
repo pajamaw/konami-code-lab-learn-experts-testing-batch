@@ -1,3 +1,4 @@
+"strict mode";
 const chai = require('chai')
 const fs = require('fs')
 const jsdom = require('mocha-jsdom')
@@ -40,7 +41,7 @@ describe('index', () => {
 
       window.alert = chai.spy()
 
-      for (let i = 0, l = code.length; i < l; i++) {
+      for (var i = 0, l = code.length; i < l; i++) {
         triggerKeyDown(code[i])
       }
 
@@ -52,7 +53,7 @@ describe('index', () => {
 
       window.alert = chai.spy()
 
-      for (let i = 0, l = code.length; i < l; i++) {
+      for (var i = 0, l = code.length; i < l; i++) {
         triggerKeyDown(i)
       }
 
